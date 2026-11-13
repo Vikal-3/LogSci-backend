@@ -2,6 +2,7 @@
 
 
 import dotenv from 'dotenv'
+import app from './app.js'
 import ConnectDB from './db/index.js'
 
 
@@ -10,11 +11,9 @@ dotenv.config({
 })
 
 
-ConnectDB();
-
-then(()=>{  
-
-  app.on('error',error=()=>{
+ConnectDB()
+.then(()=>{  
+app.on('error',(error)=>{
     console.log('error',error);
     throw error
   })
