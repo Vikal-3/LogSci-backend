@@ -1,14 +1,14 @@
 // -r dotenv/config --experimental-json-modules
 
 
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
 import app from './app.js'
 import ConnectDB from './db/index.js'
 
 
-dotenv.config({
-  path:'/env'
-})
+// dotenv.config({
+//   path:'./.env'
+// })
 
 
 ConnectDB()
@@ -24,7 +24,7 @@ app.on('error',(error)=>{
    })
 })
 .catch((error)=>{
-  console.log("monogo=DB -- connection -- failed -- !! ", error);
+  console.log("monogoDB -- connection -- failed -- !! ", error);
 })
 
 
